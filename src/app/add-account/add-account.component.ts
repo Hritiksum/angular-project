@@ -3,6 +3,9 @@ import { Component, Output, EventEmitter } from '@angular/core';
 //Import Account DataModel
 import { DataModales_Accounts as Account } from 'src/model/account-model';
 
+//service
+import { AccountLoggingService } from '../services/accountLogging.service';
+
 @Component({
   selector: 'app-add-account',
   templateUrl: './add-account.component.html',
@@ -13,11 +16,13 @@ export class AddAccountComponent {
 
   @Output() accountAdded = new EventEmitter<Account.addAccount>();
 
+  constructor(private AccountLogging: AccountLoggingService){}
+
   onSubmit(accountName:string|any,accountType:string|any){
     let account = new Account.addAccount;
     account.name=accountName;
     account.type=accountType;
     this.accountAdded.emit(account);
-    console.log(account);
+    this.AccountLogging.logNewCreateAccount(account.name,account.type);
   }
 }

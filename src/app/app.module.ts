@@ -9,6 +9,9 @@ import { AccountListComponent } from './account-list/account-list.component';
 import { SharedModule } from './shared/shared.module';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+//service
+import { AccountLoggingService } from './services/accountLogging.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,7 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     // FontAwesomeModule
   ],
-  providers: [],
+  providers: [AccountLoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
