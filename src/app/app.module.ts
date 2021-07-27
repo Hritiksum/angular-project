@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 
 //service
 import { AccountLoggingService } from './services/accountLogging.service';
+import { AccountDataService } from './services/accountData.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AccountLoggingService } from './services/accountLogging.service';
     SharedModule,
     // FontAwesomeModule
   ],
-  providers: [AccountLoggingService],
+  providers: [AccountLoggingService,
+              AccountDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

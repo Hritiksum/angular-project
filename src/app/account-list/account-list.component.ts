@@ -5,6 +5,7 @@ import { DataModales_Accounts as Account } from 'src/model/account-model';
 
 //service
 import { AccountLoggingService } from '../services/accountLogging.service';
+import { AccountDataService } from '../services/accountData.service';
 
 @Component({
   selector: 'app-account-list',
@@ -16,10 +17,12 @@ export class AccountListComponent {
   @Input() Id: number|any;
   @Output() AccountStateChange = new EventEmitter<{id: number, newType:string}>();
 
-  constructor(private AccountLogging: AccountLoggingService){}
+  constructor(private AccountLogging: AccountLoggingService,
+              private AccountData: AccountDataService){}
 
   OnStateChange(type: string){
-    this.AccountStateChange.emit({id: this.Id, newType: type});
-    this.AccountLogging.logCurrentAccountTypeChange(type);
+    // this.AccountStateChange.emit({id: this.Id, newType: type});
+    // this.AccountLogging.logCurrentAccountTypeChange(type);
+    this.AccountData.onTypeUpdate(this.Id,type);
   }
 }

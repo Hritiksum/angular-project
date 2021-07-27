@@ -5,6 +5,7 @@ import { DataModales_Accounts as Account } from 'src/model/account-model';
 
 //service
 import { AccountLoggingService } from '../services/accountLogging.service';
+import { AccountDataService } from '../services/accountData.service';
 
 @Component({
   selector: 'app-add-account',
@@ -16,13 +17,16 @@ export class AddAccountComponent {
 
   @Output() accountAdded = new EventEmitter<Account.addAccount>();
 
-  constructor(private AccountLogging: AccountLoggingService){}
+  constructor(private AccountLogging: AccountLoggingService,
+              private AccountData: AccountDataService
+              ){}
 
   onSubmit(accountName:string|any,accountType:string|any){
-    let account = new Account.addAccount;
-    account.name=accountName;
-    account.type=accountType;
-    this.accountAdded.emit(account);
-    this.AccountLogging.logNewCreateAccount(account.name,account.type);
+    // let account = new Account.addAccount;
+    // account.name=accountName;
+    // account.type=accountType;
+    let account = this.AccountData.onCreateAccount(accountName,accountType);
+    // this.accountAdded.emit(account);
+    // this.AccountLogging.logNewCreateAccount(account.name,account.type);
   }
 }

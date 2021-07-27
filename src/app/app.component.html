@@ -8,14 +8,16 @@
 
     <!-- Create New account -->
     <app-add-account
-        (accountAdded)="onAccountCreate($event)"></app-add-account>
+        
+        ></app-add-account>
     <hr>
     <!-- List of accounts created -->
     <app-account-list 
         *ngFor="let acc of account; let i=index"
         [Accnt]="acc"
         [Id]="i"
-        (AccountStateChange)="StateChange($event)"></app-account-list>
+        
+        ></app-account-list>
 </div>
 <div>
     <app-footer></app-footer>
