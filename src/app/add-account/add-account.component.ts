@@ -4,7 +4,6 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { DataModales_Accounts as Account } from 'src/model/account-model';
 
 //service
-import { AccountLoggingService } from '../services/accountLogging.service';
 import { AccountDataService } from '../services/accountData.service';
 
 @Component({
@@ -17,9 +16,7 @@ export class AddAccountComponent {
 
   @Output() accountAdded = new EventEmitter<Account.addAccount>();
 
-  constructor(private AccountLogging: AccountLoggingService,
-              private AccountData: AccountDataService
-              ){}
+  constructor(private AccountData: AccountDataService){}
 
   onSubmit(accountName:string|any,accountType:string|any){
     // let account = new Account.addAccount;
