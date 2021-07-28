@@ -14,7 +14,7 @@ import { AccountDataService } from '../services/accountData.service';
 export class AccountListComponent {
   @Input() Accnt: Account.addAccount|any;
   @Input() Id: number|any;
-  @Output() AccountStateChange = new EventEmitter<{id: number, newType:string}>();
+  // @Output() AccountStateChange = new EventEmitter<{id: number, newType:string}>();
 
   constructor(private AccountData: AccountDataService){}
 
