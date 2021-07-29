@@ -4,7 +4,7 @@ import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { DataModales_Accounts as Account } from 'src/model/account-model';
 
 //service
-import { AccountDataService } from '../services/accountData.service';
+import { AccountDataService } from '../../services/accountData.service';
 
 @Component({
   selector: 'app-account-list',
@@ -14,7 +14,7 @@ import { AccountDataService } from '../services/accountData.service';
 export class AccountListComponent {
   @Input() Accnt: Account.addAccount|any;
   @Input() Id: number|any;
-  @Output() AccountStateChange = new EventEmitter<{id: number, newType:string}>();
+  // @Output() AccountStateChange = new EventEmitter<{id: number, newType:string}>();
 
   constructor(private AccountData: AccountDataService){}
 

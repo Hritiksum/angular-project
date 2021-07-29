@@ -4,27 +4,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AddAccountComponent } from './add-account/add-account.component';
-import { AccountListComponent } from './account-list/account-list.component';
 import { SharedModule } from './shared/shared.module';
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AccountModule } from './account/account.module';
 
 //service
 import { AccountLoggingService } from './services/accountLogging.service';
 import { AccountDataService } from './services/accountData.service';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddAccountComponent,
-    AccountListComponent
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     SharedModule,
-    // FontAwesomeModule
+    AccountModule
   ],
   providers: [AccountLoggingService,
               AccountDataService],

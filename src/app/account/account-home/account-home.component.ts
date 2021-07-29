@@ -2,21 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { DataModales_Accounts as Account } from 'src/model/account-model';
 
 //service
-// import { AccountDataService } from './services/accountData.service';
+import { AccountDataService } from 'src/app/services/accountData.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-account-home',
+  templateUrl: './account-home.component.html',
+  styleUrls: ['./account-home.component.scss']
 })
-export class AppComponent implements OnInit{
-  title = 'test1';
+export class AccountHomeComponent implements OnInit {
   account:Account.addAccount[] = [];
 
-  constructor(){}
+  constructor(private AccountData:AccountDataService){}
 
   ngOnInit(){
-    // this.account = this.AccountData.account;
+    this.account = this.AccountData.account;
   }
   // onAccountCreate(newAccount: {name: string, type: string}){
   //   this.account.push(newAccount);
