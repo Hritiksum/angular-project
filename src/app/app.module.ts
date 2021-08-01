@@ -11,6 +11,8 @@ import { AccountModule } from './account/account.module';
 import { AccountLoggingService } from './services/accountLogging.service';
 import { AccountDataService } from './services/accountData.service';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AuthGuard } from './services/auth-guard.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AccountModule
   ],
   providers: [AccountLoggingService,
-              AccountDataService],
+              AccountDataService,
+              AuthGuard,
+              AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
