@@ -13,11 +13,13 @@ import { AccountDataService } from './services/accountData.service';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuard } from './services/auth-guard.service';
 
 const routes: Routes = [
@@ -10,8 +11,16 @@ const routes: Routes = [
   },
   {
     path:'account',
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],//protect the whole module
     loadChildren:() => import('./account/account.module').then(m => m.AccountModule)
+  },
+  {
+    path:'notfound',
+    component: NotFoundComponent
+  },
+  {
+    path:'**',
+    redirectTo: 'notfound'
   }
 ];
 

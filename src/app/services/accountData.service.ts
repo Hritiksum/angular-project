@@ -8,7 +8,16 @@ import { AccountLoggingService } from "./accountLogging.service";
 @Injectable()
 
 export class AccountDataService{
-    account:Account.addAccount[]=[];
+    account:Account.addAccount[]=[
+        {
+            name:'account0',
+            type:'active'
+        },
+        {
+            name:'account1',
+            type:'inactive'
+        }
+    ];
 
     constructor(private AccountLogging:AccountLoggingService){}
 
@@ -19,5 +28,8 @@ export class AccountDataService{
     onTypeUpdate(id:number,newtype:string){
         this.account[id].type=newtype;
         this.AccountLogging.logCurrentAccountTypeChange(newtype);
+    }
+    getAccountDetail(i:number){
+        return this.account[i];
     }
 }

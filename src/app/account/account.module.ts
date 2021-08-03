@@ -5,12 +5,14 @@ import { AccountRoutingModule } from './account-routing.module';
 import { AccountHomeComponent } from './account-home/account-home.component';
 import { AddAccountComponent } from './add-account/add-account.component';
 import { AccountListComponent } from './account-list/account-list.component';
+import { AccountDetailComponent } from './account-detail/account-detail.component';
 
 @NgModule({
   declarations: [
     AccountHomeComponent,
     AddAccountComponent,
-    AccountListComponent
+    AccountListComponent,
+    AccountDetailComponent
   ],
   imports: [
     CommonModule,
