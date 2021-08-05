@@ -14,13 +14,13 @@ export class AccountDetailComponent implements OnInit {
   accountDetail: AccountData.addAccount|any;
   i:number|any;
   constructor(private AccountDataservice: AccountDataService,
-              private activeRoute: ActivatedRoute) {
-                this.activeRoute.params.subscribe((params:Params) => {
-                  this.i = params['id'];
-                  this.accountDetail = this.AccountDataservice.getAccountDetail(this.i);
-                });
+              private activeRoute: ActivatedRoute) {     
   }
 
   ngOnInit(){
+    this.activeRoute.params.subscribe((params:Params) => {
+      this.i = params['id'];
+      this.accountDetail = this.AccountDataservice.getAccountDetail(this.i);
+    });
   }
 }
