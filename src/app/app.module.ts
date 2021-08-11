@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
 import { AccountModule } from './account/account.module';
+import { TdFormModule } from './td-form/td-form.module';
 
 //service
 import { AccountLoggingService } from './services/accountLogging.service';
@@ -26,7 +27,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppRoutingModule,
     NgbModule,
     SharedModule,
-    AccountModule
+    AccountModule,
+    TdFormModule
   ],
   providers: [AccountLoggingService,
               AccountDataService,

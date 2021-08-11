@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren:() => import('./account/account.module').then(m => m.AccountModule)
   },
   {
+    path:'tdform',
+    loadChildren:() => import('./td-form/td-form.module').then(m=>m.TdFormModule)
+  },
+  {
     path:'notfound',
     component: NotFoundComponent
   },
