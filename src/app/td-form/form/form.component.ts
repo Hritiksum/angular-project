@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
   @ViewChild('f') accountForm:NgForm|any;
-
+  genders:[]|any=['male','female','other'];
   constructor() { }
 
   ngOnInit(): void {

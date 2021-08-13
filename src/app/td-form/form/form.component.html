@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-            <form (ngSubmit)="onSubmit()" #f="ngForm">
-                <div ngModelGroup="UserName">
+            <form (ngSubmit)="onSubmit()" #f="ngForm"><!--F local variable is a reference for Form-->
+                <div ngModelGroup="UserName" #username=ngModelGroup><!--ngModelGroup use to group form data in group-->
                     <div class="form-group">
                         <label for="userfname">First Name</label>
                         <input type="text" id="userfname" ngModel name="Fname" class="form-control" 
@@ -22,6 +22,7 @@
                         <span *ngIf="!lname.valid && lname.touched">Please enter valid Lastname</span>
                     </div>
                 </div>
+                <span *ngIf="!username.valid && username.touched">Please enter valid name</span>
                 <div ngModelGroup="userDetail">
                     <div class="form-group">
                         <label for="useremail">Email</label>
@@ -30,6 +31,20 @@
                             email 
                             #email="ngModel">
                         <span class="help-block" *ngIf="!email.valid && email.touched">Please enter valid email</span>
+                    </div>
+                    <label for="gender">Gender</label>
+                    <div class="d-flex">
+                        <div class="mx-2 form-check" *ngFor="let gender of genders">
+                            <input type="radio" 
+                                ngModel 
+                                class="form-check-input"
+                                name="gender" 
+                                [value]="gender"
+                                required>
+                            <label class="form-check-label" for="">
+                                {{gender}}
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
