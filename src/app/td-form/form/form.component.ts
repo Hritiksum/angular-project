@@ -14,14 +14,15 @@ export class FormComponent implements OnInit {
           Mname:'',
           Lname:''
         },
-        userAccountInfo:{
-          userid:'',
-        },
-        userDetail:{
-          email:'',
-          gender:''
-        }
+    userAccountInfo:{
+      userid:'',
+    },
+    userDetail:{
+      email:'',
+      gender:''
+    }
   };
+  accountdatalist:[]|any=[];
   genders:[]|any=['male','female','other'];
   constructor() { }
 
@@ -57,6 +58,26 @@ export class FormComponent implements OnInit {
     this.accountFormData.userAccountInfo.userid=this.accountForm.value.userAccountInfo.userid;
     this.accountFormData.userDetail.email=this.accountForm.value.userDetail.email;
     this.accountFormData.userDetail.gender=this.accountForm.value.userDetail.gender;
-    console.log(this.accountFormData);
+    // console.log(this.accountFormData);
+
+    this.accountdatalist.push(this.accountFormData);
+    this.accountFormData={
+    UserName:{
+          Fname:'',
+          Mname:'',
+          Lname:''
+        },
+        userAccountInfo:{
+          userid:'',
+        },
+        userDetail:{
+          email:'',
+          gender:''
+        }
+  };
+    // console.log(this.accountFormData);
+    // console.log(this.accountdatalist);
+    //reset the form
+    this.accountForm.reset();
   }
 }

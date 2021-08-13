@@ -89,14 +89,17 @@
                 <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
             </form>
         </div>
-        <div class="col-xs-12 col-sm-2 col-md-4 mt-4" *ngIf="accountFormData.UserName.Fname!=''">
-            UserName: {{accountFormData.UserName.Fname+" "+accountFormData.UserName?.Mname+" "+accountFormData.UserName.Lname}}
-            <br>
-            UserId: {{accountFormData.userAccountInfo.userid}}
-            <br>
-            Email: {{accountFormData.userDetail.email}}
-            <br>
-            Gender: {{accountFormData.userDetail.gender}}
+        <div *ngFor="let account of accountdatalist;let i = index">
+            <div>{{"Account "+i}}</div>
+            <div class="col-xs-12 col-sm-2 col-md-3 mt-4" *ngIf="account.UserName.Fname!=''">
+                UserName: {{account.UserName.Fname+" "+account.UserName?.Mname+" "+account.UserName.Lname}}
+ 
+                UserId: {{account.userAccountInfo.userid}}
+   
+                Email: {{account.userDetail.email}}
+ 
+                Gender: {{account.userDetail.gender}}
+            </div>
         </div>
     </div>
 </div>
