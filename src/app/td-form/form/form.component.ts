@@ -8,6 +8,20 @@ import { NgForm } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
   @ViewChild('f') accountForm:NgForm|any;
+  accountFormData:object|any={
+    UserName:{
+          Fname:'',
+          Mname:'',
+          Lname:''
+        },
+        userAccountInfo:{
+          userid:'',
+        },
+        userDetail:{
+          email:'',
+          gender:''
+        }
+  };
   genders:[]|any=['male','female','other'];
   constructor() { }
 
@@ -36,6 +50,13 @@ export class FormComponent implements OnInit {
     });
   }
   onSubmit(){
-    console.log(this.accountForm);
+    // console.log(this.accountForm);
+    this.accountFormData.UserName.Fname=this.accountForm.value.UserName.Fname;
+    this.accountFormData.UserName.Mname=this.accountForm.value.UserName.Mname;
+    this.accountFormData.UserName.Lname=this.accountForm.value.UserName.Lname;
+    this.accountFormData.userAccountInfo.userid=this.accountForm.value.userAccountInfo.userid;
+    this.accountFormData.userDetail.email=this.accountForm.value.userDetail.email;
+    this.accountFormData.userDetail.gender=this.accountForm.value.userDetail.gender;
+    console.log(this.accountFormData);
   }
 }

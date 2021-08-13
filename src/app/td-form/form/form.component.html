@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container my-2">
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
             <form (ngSubmit)="onSubmit()" #f="ngForm"><!--F local variable is a reference for Form-->
@@ -56,7 +56,7 @@
                                 <button 
                                 type="button"
                                 (click)="onSuggestUsername()"
-                                class="btn btn-secondary float-right">Suggest username</button>
+                                class="btn btn-secondary float-left float-md-right float-lg-right">Suggest username</button>
                             </div>
                         </div>
                     </div>
@@ -88,6 +88,15 @@
                 </div>
                 <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
             </form>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-4 mt-4" *ngIf="accountFormData.UserName.Fname!=''">
+            UserName: {{accountFormData.UserName.Fname+" "+accountFormData.UserName?.Mname+" "+accountFormData.UserName.Lname}}
+            <br>
+            UserId: {{accountFormData.userAccountInfo.userid}}
+            <br>
+            Email: {{accountFormData.userDetail.email}}
+            <br>
+            Gender: {{accountFormData.userDetail.gender}}
         </div>
     </div>
 </div>
