@@ -5,24 +5,63 @@
                 <div ngModelGroup="UserName" #username=ngModelGroup><!--ngModelGroup use to group form data in group-->
                     <div class="form-group">
                         <label for="userfname">First Name</label>
-                        <input type="text" id="userfname" ngModel name="Fname" class="form-control" 
+                        <input 
+                        type="text" 
+                        id="userfname" 
+                        ngModel 
+                        name="Fname" 
+                        class="form-control" 
                         required
                         #fname="ngModel">
                         <span class="help-block" *ngIf="!fname.valid && fname.touched">Please enter valid Firstname</span>
                     </div>
                     <div class="form-group">
                         <label for="usermname">Middle Name</label>
-                        <input type="text" id="usermname" ngModel name="Mname" class="form-control">
+                        <input 
+                        type="text" 
+                        id="usermname" 
+                        ngModel 
+                        name="Mname" 
+                        class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="userlname">Last Name</label>
-                        <input type="text" id="userlname" ngModel name="Lname" class="form-control" 
+                        <input 
+                        type="text" 
+                        id="userlname" 
+                        ngModel 
+                        name="Lname" 
+                        class="form-control" 
                         required
                         #lname="ngModel">
                         <span *ngIf="!lname.valid && lname.touched">Please enter valid Lastname</span>
                     </div>
                 </div>
                 <span *ngIf="!username.valid && username.touched">Please enter valid name</span>
+                <div ngModelGroup="userAccountInfo">
+                    <div class="form-group">
+                        <label for="userid">Username</label>
+                        <div class="row">
+                            <div class="col-12 col-lg-8">
+                                <input 
+                                id="userid" 
+                                type="text" 
+                                class="form-control"
+                                name="userid"
+                                required 
+                                ngModel
+                                #uName="ngModel">
+                            </div>
+                            <div class="col-12 col-lg-4 my-2 my-lg-0">
+                                <button 
+                                type="button"
+                                (click)="onSuggestUsername()"
+                                class="btn btn-secondary float-right">Suggest username</button>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="help-block" *ngIf="!uName.valid && uName.touched">Enter valid userName</span>
+                </div>
                 <div ngModelGroup="userDetail">
                     <div class="form-group">
                         <label for="useremail">Email</label>

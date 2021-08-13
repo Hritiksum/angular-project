@@ -13,6 +13,28 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  onSuggestUsername(){
+    const username= 'superuser';
+    // this.accountForm.setValue({
+    //   UserName:{
+    //     Fname:'',
+    //     Mname:'',
+    //     Lname:''
+    //   },
+    //   userAccountInfo:{
+    //     userid:username,
+    //   },
+    //   userDetail:{
+    //     email:'',
+    //     gender:'male'
+    //   }
+    // });
+    this.accountForm.form.patchValue({
+      userAccountInfo:{
+        userid:username,
+      }
+    });
+  }
   onSubmit(){
     console.log(this.accountForm);
   }
