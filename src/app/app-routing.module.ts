@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren:() => import('./account/account.module').then(m => m.AccountModule)
   },
   {
+    path:'rform',
+    loadChildren:() =>import('./reactive-form/reactive-form.module').then(m => m.ReactiveFormModule)
+  },
+  {
     path:'notfound',
     component: NotFoundComponent
   },
