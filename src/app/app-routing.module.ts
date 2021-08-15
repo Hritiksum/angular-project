@@ -19,6 +19,10 @@ const routes: Routes = [
     loadChildren:() => import('./td-form/td-form.module').then(m=>m.TdFormModule)
   },
   {
+    path:'rform',
+    loadChildren:() =>import('./reactive-form/reactive-form.module').then(m => m.ReactiveFModule)
+  },
+  {
     path:'notfound',
     component: NotFoundComponent
   },

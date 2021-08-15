@@ -1,0 +1,96 @@
+<div class="container my-2">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form [formGroup]="Rform" (ngSubmit)="onSubmit()">
+                <div formGroupName="username">
+                    <div class="form-group">
+                        <label for="userfname">First Name</label>
+                        <input 
+                        type="text" 
+                        id="userfname"
+                        formControlName="userfname"
+                        class="form-control">
+                        <div class="alert alert-danger" 
+                        *ngIf="!Rform.get('username.userfname').valid && Rform.get('username.userfname').touched">Please enter valid Firstname</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="usermname">Middle Name</label>
+                        <input 
+                        type="text" 
+                        id="usermname" 
+                        formControlName="usermname"
+                        class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="userlname">Last Name</label>
+                        <input 
+                        type="text" 
+                        id="userlname" 
+                        formControlName="userlname"
+                        class="form-control">
+                        <div class="alert alert-danger" *ngIf="!Rform.get('username.userlname').valid && Rform.get('username.userlname').touched">Please enter valid Lastname</div>
+                    </div>
+                </div>
+                <!-- <div *ngIf="!username.valid && username.touched">Please enter valid name</div> -->
+ 
+                <div class="form-group">
+                    <label for="userid">Username</label>
+                    <div class="row">
+                        <div class="col-12 col-lg-8">
+                            <input 
+                            id="userid" 
+                            formControlName="userid"
+                            type="text" 
+                            class="form-control">
+                            <div class="alert alert-danger" *ngIf="!Rform.get('userid').valid && Rform.get('userid').touched">Enter valid userName</div>
+                        </div>
+                        
+                        <!-- <div class="col-12 col-lg-4 my-2 my-lg-0">
+                            <button 
+                            type="button"
+                            class="btn btn-secondary float-left float-md-right float-lg-right">Suggest username</button>
+                        </div> -->
+                    </div>
+                </div>
+                    
+
+
+                <div class="form-group">
+                    <label for="useremail">Email</label>
+                    <input 
+                    type="email" 
+                    id="useremail" 
+                    formControlName="useremail"
+                    class="form-control">
+                    <div class="alert alert-danger" *ngIf="!Rform.get('useremail').valid && Rform.get('useremail').touched">Please enter valid email</div>
+                </div>
+                <label for="gender">Gender</label>
+                <div class="d-flex">
+                    <div class="mx-2 form-check" *ngFor="let gender of genders">
+                        <input type="radio"
+                            class="form-check-input" 
+                            formControlName="gender"
+                            [value]="gender">
+                        <label class="form-check-label">
+                            {{gender}}
+                        </label>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+        <!-- <div *ngFor="let account of accountdatalist;let i = index">
+            <div>{{"Account "+i}}</div>
+            <div class="col-xs-12 col-sm-2 col-md-3 mt-4" *ngIf="account.UserName.Fname!=''">
+                UserName: {{account.UserName.Fname+" "+account.UserName?.Mname+" "+account.UserName.Lname}}
+ 
+                UserId: {{account.userAccountInfo.userid}}
+   
+                Email: {{account.userDetail.email}}
+ 
+                Gender: {{account.userDetail.gender}}
+            </div>
+        </div> -->
+    </div>
+</div>
