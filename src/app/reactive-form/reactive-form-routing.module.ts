@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RFromComponent } from './r-from/r-from.component';
+import { RFormComponent } from './r-from/r-from.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: RFromComponent
+        component: RFormComponent
     }
 ];
 

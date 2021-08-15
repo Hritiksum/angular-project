@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
 import { AccountModule } from './account/account.module';
-import { ReactiveFormModule } from './reactive-form/reactive-form.module';
+import { ReactiveFModule } from './reactive-form/reactive-form.module';
 
 //service
 import { AccountLoggingService } from './services/accountLogging.service';
@@ -28,7 +28,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NgbModule,
     SharedModule,
     AccountModule,
-    ReactiveFormModule
+    ReactiveFModule
   ],
   providers: [AccountLoggingService,
               AccountDataService,
